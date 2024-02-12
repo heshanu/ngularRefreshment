@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { AppointmentListComponent } from './appointment-list/appointment-list.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -13,7 +17,10 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatSlideToggleModule,
+    MatCardModule,
+    MatButtonToggleModule
   ],
   providers: [
     provideClientHydration(),
