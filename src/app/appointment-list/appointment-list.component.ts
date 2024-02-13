@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './appointment-list.component.css'
 })
 export class AppointmentListComponent {
+  appointment:string="Take dog for a walk";
 
 }
