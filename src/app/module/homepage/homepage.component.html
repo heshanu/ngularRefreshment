@@ -1,0 +1,20 @@
+<app-navbar/>
+
+<app-herosection/>
+<!-- Features Grid -->
+<section class="features-section">
+  <h2>Why Choose Us?</h2>
+  <div class="features-grid">
+    <!-- Angular *ngFor loop to dynamically render features -->
+    <div class="feature-card" *ngFor="let feature of features">
+      <div class="feature-icon">{{ feature.icon }}</div>
+      <h3>{{ feature.title }}</h3>
+      <p>{{ feature.description }}</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>&copy; 2026 {{ appName }}. All rights reserved. Created with Angular.</p>
+</footer>
