@@ -11,11 +11,14 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
+import { HomepageModule } from './module/homepage/homepage.module';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HerosectionComponent } from './herosection/herosection.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AppointmentListComponent
+    AppointmentListComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatCardModule,
     MatButtonToggleModule,
     MatButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    HomepageModule
 ],
   providers: [
     provideClientHydration(),
