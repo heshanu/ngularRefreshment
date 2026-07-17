@@ -1,1 +1,78 @@
-<p>Hi {{appointment}}</p>
+<div class="fraud-dashboard">
+  <header>
+    <div class="logo-area">
+      <span class="pulse-icon"></span>
+      <h1>Security Sentinel <small>Live Fraud Feed</small></h1>
+    </div>
+    <div class="stats">
+      Total Threats Detected: <strong>{{  parsedTransactions.length }}/{{allparsedTransactions.length}} </strong>
+    </div>
+  </header>
+
+  <div class="card-grid">
+    <div class="fraud-card" *ngFor="let tx of  parsedTransactions">
+      
+      <div class="card-top">
+        <span class="timestamp">JUST NOW</span>
+        <div class="risk-badge">HIGH RISK</div>
+      </div>
+
+      <div class="main-info">
+        <div class="tx-id-box">
+          <label>TRANSACTION ID</label>
+          <code>{{ tx.transactionId }}</code>
+        </div>
+        <div class="amount-box">
+          <h2>{{ tx.amount | currency: tx.currency }}</h2>
+        </div>
+      </div>
+
+      <div class="user-detail">
+        <div class="avatar">{{ tx.userId.substring(0,2) }}</div>
+        <div>
+          <label>Flagged Account</label>
+          <p>{{ tx.userId }}</p>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <button class="btn-investigate">Investigate</button>
+        <button class="btn-block">Block User</button>
+      </div>
+      
+    </div>
+  </div>
+   <div class="card-grid">
+    <div class="fraud-card" *ngFor="let tx of  allparsedTransactions">
+      
+      <div class="card-top">
+        <span class="timestamp">JUST NOW</span>
+      
+      </div>
+
+      <div class="main-info">
+        <div class="tx-id-box">
+          <label>TRANSACTION ID</label>
+          <code>{{ tx.transactionId }}</code>
+        </div>
+        <div class="amount-box">
+          <h2>{{ tx.amount | currency: tx.currency }}</h2>
+        </div>
+      </div>
+
+      <div class="user-detail">
+        <div class="avatar">{{ tx.userId.substring(0,2) }}</div>
+        <div>
+          <label>Flagged Account</label>
+          <p>{{ tx.userId }}</p>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <button class="btn-investigate">Investigate</button>
+        <button class="btn-block">Block User</button>
+      </div>
+      
+    </div>
+  </div>
+</div>

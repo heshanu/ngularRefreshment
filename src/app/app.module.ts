@@ -10,6 +10,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatButtonModule} from '@angular/material/button';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,8 +23,9 @@ import {MatButtonModule} from '@angular/material/button';
     MatSlideToggleModule,
     MatCardModule,
     MatButtonToggleModule,
-    MatButtonModule
-  ],
+    MatButtonModule,
+    HttpClientModule
+],
   providers: [
     provideClientHydration(),
     provideAnimationsAsync()

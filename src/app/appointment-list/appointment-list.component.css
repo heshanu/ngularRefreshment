@@ -1,0 +1,133 @@
+.fraud-dashboard {
+  background: #0f111a;
+  color: #e0e0e0;
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #2d303e;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.pulse-icon {
+  width: 12px;
+  height: 12px;
+  background: #ff3e3e;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  box-shadow: 0 0 0 rgba(255, 62, 62, 0.4);
+  animation: pulse 2s infinite;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.fraud-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.fraud-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: #ff3e3e;
+  transform: translateY(-10px);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.risk-badge {
+  background: rgba(255, 62, 62, 0.2);
+  color: #ff3e3e;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 6px;
+  letter-spacing: 1px;
+}
+
+.tx-id-box label, .user-detail label {
+  font-size: 0.65rem;
+  color: #888;
+  display: block;
+}
+
+.tx-id-box code {
+  color: #00d4ff;
+  font-size: 1.1rem;
+}
+
+.amount-box h2 {
+  font-size: 2rem;
+  margin: 1rem 0;
+  color: #fff;
+  letter-spacing: -1px;
+}
+
+.user-detail {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(0,0,0,0.2);
+  padding: 10px;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.avatar {
+  width: 35px;
+  height: 35px;
+  background: #2d303e;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #00d4ff;
+}
+
+.card-footer {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-investigate, .btn-block {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-investigate { background: #2d303e; color: white; }
+.btn-block { background: #ff3e3e; color: white; }
+
+.btn-block:hover { background: #cc3232; }
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(255, 62, 62, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(255, 62, 62, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 62, 62, 0); }
+}
