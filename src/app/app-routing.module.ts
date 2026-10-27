@@ -5,6 +5,7 @@ import { AppointmentListComponent } from './appointment-list/appointment-list.co
 const routes: Routes = [
   {path:'appointment',component:AppointmentListComponent},
   {path: '', loadChildren: () => import('./module/homepage/homepage.module').then(m => m.HomepageModule)},
+  {path:'chart',loadChildren: () => import('./shared/chart/chart.module').then(m => m.ChartModule)}
  
 ];
 

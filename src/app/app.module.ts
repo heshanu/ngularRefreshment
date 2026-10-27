@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component, ViewChild } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,8 +12,8 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { HomepageModule } from './module/homepage/homepage.module';
-import { NavbarComponent } from './navbar/navbar.component';
-import { HerosectionComponent } from './herosection/herosection.component';
+import { ChartModule } from './shared/chart/chart.module';
+import { HighchartModule } from './shared/highchart/highchart.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,8 @@ import { HerosectionComponent } from './herosection/herosection.component';
     MatButtonToggleModule,
     MatButtonModule,
     HttpClientModule,
-    HomepageModule
+    HomepageModule,
+    ChartModule
 ],
   providers: [
     provideClientHydration(),
@@ -36,4 +37,6 @@ import { HerosectionComponent } from './herosection/herosection.component';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+   
+}
