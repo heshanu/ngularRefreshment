@@ -1,4 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
 import { FraudeService } from '../services/fraude.service';
 import { TransactionModel } from '../shared/models/TransactionModel';
 import { TransactionsService } from '../services/transactions.service';
@@ -14,7 +15,11 @@ export class AppointmentListComponent implements OnInit,OnDestroy {
   TransactionSubscription!: Subscription ;
   parsedTransactions: TransactionModel[] = [];
  allparsedTransactions: TransactionModel[] = [];
-  constructor(private alertService:FraudeService,private transactions:TransactionsService) {}
+  constructor(
+    private alertService:FraudeService,
+    private transactions:TransactionsService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
   ngOnDestroy(): void {
     if (this.FraudeSubscription) {
@@ -26,6 +31,10 @@ export class AppointmentListComponent implements OnInit,OnDestroy {
 
 
   ngOnInit() {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
    this.FraudeSubscription= this.alertService.getAllAlerts().subscribe(rawStrings => {
       // Map the array of strings into an array of objects
       this.parsedTransactions = rawStrings.map(str => JSON.parse(str));

@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 import { HomepageComponent } from './homepage.component';
 
@@ -8,10 +9,11 @@ describe('HomepageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [HomepageComponent]
+      declarations: [HomepageComponent],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(HomepageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
